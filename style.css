@@ -1,0 +1,61 @@
+:root {
+  --bg: #f6f5f1;
+  --card: #ffffff;
+  --text: #1c1917;
+  --muted: #6b6560;
+  --accent: #15803d;
+  --accent-text: #ffffff;
+  --border: #e3e0d9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121412;
+    --card: #1d201d;
+    --text: #ecebe7;
+    --muted: #a39f98;
+    --accent: #22c55e;
+    --accent-text: #0b1a10;
+    --border: #2e322e;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 17px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+  max-width: 640px;
+  margin-inline: auto;
+}
+header { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; }
+h1 { font-size: 22px; margin: 0; }
+h2 { font-size: 16px; margin: 0 0 8px; color: var(--muted); font-weight: 600; }
+.status { color: var(--muted); font-size: 14px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 12px; }
+.hidden { display: none !important; }
+label { display: block; margin: 12px 0; }
+label.row { display: flex; gap: 8px; align-items: center; }
+select { margin-left: 8px; font-size: 16px; }
+button {
+  font-size: 17px; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); cursor: pointer; min-height: 52px;
+}
+button.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 600; }
+#start { width: 100%; margin-top: 8px; }
+.title { font-size: 24px; font-weight: 700; line-height: 1.25; }
+.sub { color: var(--muted); margin-top: 4px; }
+#thumb { width: 100%; max-height: 220px; object-fit: cover; border-radius: 10px; margin-top: 12px; }
+#text { white-space: pre-line; }
+.buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+.buttons button { font-size: 20px; min-height: 64px; }
+.controls { display: flex; gap: 10px; margin-top: 12px; }
+.controls button { flex: 1; font-size: 15px; }
+.listening { color: var(--accent); font-weight: 600; text-align: center; }
+#nearby { margin: 0; padding-left: 20px; }
+#nearby li { margin: 4px 0; }
+#nearby .d { color: var(--muted); font-size: 14px; }
+#nearby .told { opacity: 0.5; }
+footer { color: var(--muted); font-size: 13px; text-align: center; padding: 12px 0 24px; }
+footer a { color: inherit; }
+#nearby a { color: var(--accent); }

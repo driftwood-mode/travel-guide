@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14532d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Wayside</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Wayside</h1>
+    <div class="status"><span id="mode">Idle</span> · <span id="gps">no GPS</span></div>
+  </header>
+
+  <main>
+    <section id="start-screen" class="card">
+      <p>Wayside notices interesting places around you and asks if you want to hear about them. Keep the screen on, put the phone in a holder while driving, and answer by voice or with the buttons.</p>
+      <label>Language
+        <select id="lang">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </label>
+      <label class="row"><input type="checkbox" id="voice-in" checked> Answer by voice</label>
+      <button id="start" class="primary">Start</button>
+    </section>
+
+    <section id="live" class="card hidden">
+      <div id="prompt-title" class="title">Looking around…</div>
+      <div id="prompt-sub" class="sub"></div>
+      <img id="thumb" class="hidden" alt="">
+      <p id="text"></p>
+      <div id="buttons" class="buttons hidden">
+        <button id="yes" class="primary">Yes</button>
+        <button id="no">No</button>
+      </div>
+      <div id="more-buttons" class="buttons hidden">
+        <button id="more" class="primary">More detail</button>
+        <button id="done">Enough</button>
+      </div>
+      <div id="listening" class="listening hidden">Listening…</div>
+      <div class="controls">
+        <button id="ask-now">What's around me?</button>
+        <button id="stop">Pause</button>
+      </div>
+    </section>
+
+    <section id="nearby-wrap" class="card hidden">
+      <h2>Nearby</h2>
+      <ol id="nearby"></ol>
+    </section>
+  </main>
+
+  <footer>Content from <a href="https://www.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a> (CC BY-SA).</footer>
+  <script src="app.js"></script>
+</body>
+</html>
